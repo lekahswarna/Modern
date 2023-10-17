@@ -1,42 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The Legendary Tamil Arasar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesan</title>
     <style>
-        /* Your CSS styles go here */
-        .box {
-            width: 200px;
-            height: 100px;
-            background-color: #f0f0f0;
-            border: 1px solid #000;
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: red; /* Set red background color */
+            margin: 0; /* Remove default margin */
+        }
+
+        .header {
+            background-color: gold; /* Header background color (gold) */
+            color: white; /* Header text color (white) */
+            text-align: center;
+            padding: 20px 0; /* Add padding to the header */
+        }
+
+        .header h1 {
+            margin: 0; /* Remove margin from heading */
+        }
+
+        .header-line {
+            width: 100%;
+            height: 2px;
+            background-color: #333; /* Line color */
+        }
+
+        .page-container {
+            display: flex;
+            align-items: center;
+            width: 800px; /* Adjusted width to accommodate all elements */
+            margin: 20px auto; /* Add margin to the page container */
+            background-color: blue; /* Set blue background color for the container */
+            padding: 20px; /* Add padding to the container */
+            border: 1px solid #ccc; /* Add border for a cleaner look */
+        }
+
+        .carousel-container {
+            width: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+        }
+
+        .carousel-button {
+            cursor: pointer;
             padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        .carousel-image {
+            width: 200px;
+            margin-left: 20px;
+        }
+
+        /* Style the audio button */
+        .audio-button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Ponni Selvan-1</h1>
-    </header>
-    <h2>By Swarna Ganesan(9d)</h2>
-   
-    
- 
-        <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+    <div class="header">
+        <h1>Ganesan,Swarna</h1>
+        <h2 style="color: white;">be the sun you have to burn like the sun</h2>
+        <!-- Add the audio button and audio element -->
+        <button class="audio-button" id="audioButton">Play Audio</button>
+        <audio id="audio" src="my_audio.mp4"></audio>
+    </div>
+    <div class="header-line"></div>
+
+    <div class="page-container">
+        <!-- Left Carousel -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                      <img src="carousel-image-1.jpg" alt="Image 1">
+                </div>
+            </div>
+            <button class="carousel-button" id="prevBtn1">Previous</button>
+            <button class="carousel-button" id="nextBtn1">Next</button>
+        </div>
+
+        <!-- Picture -->
+        <img class="carousel-image" src="Akilaa.png" alt="Additional Image">
+
+        <!-- Right Carousel -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <a href="https://github.com/lekahswarna/">
+                        <img src="door.png" alt="Image 4">
+                    </a>
+                    <h3>Github</h3>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://www.linkedin.com/in/swarna-ganesan/">
+                        <img src="door.png" alt="Image 4">
+                    </a>
+                    <h3>Linkden</h3>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://linktr.ee/Swarna_Ganesan">
+                        <img src="door.png" alt="Image 4">
+                    </a>
+                    <h3>Links to everywhere</h3>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://forms.gle/CoqQQtunvst6RLDv7">
+                        <img src="door.png" alt="Image 4">
+                    </a>
+                    <h3>Contact me</h3>
+                </div>
+            </div>
+            <button class="carousel-button" id="prevBtn2">Previous</button>
+            <button class="carousel-button" id="nextBtn2">Next</button>
+        </div>
+    </div>
+    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
 <script src="https://mediafiles.botpress.cloud/9263d77d-1477-4c45-a65c-af5e662abbba/webchat/config.js" defer></script>
+
+    <script>
+        // JavaScript for the left carousel (Carousel 1)
+        const carousel1 = document.querySelector('.carousel-container:first-of-type .carousel');
+        const prevBtn1 = document.getElementById('prevBtn1');
+        const nextBtn1 = document.getElementById('nextBtn1');
+        let currentIndex1 = 0;
+        const totalItems1 = document.querySelectorAll('.carousel-container:first-of-type .carousel-item').length;
+
+        // Function to update the left carousel display
+        function updateCarousel1() {
+            carousel1.style.transform = `translateX(-${currentIndex1 * 100}%)`;
+        }
+
+        // Event listener for previous button of left carousel
+        prevBtn1.addEventListener('click', () => {
+            if (currentIndex1 > 0) {
+                currentIndex1--;
+                updateCarousel1();
+            }
+        });
+
+        // Event listener for next button of left carousel
+        nextBtn1.addEventListener('click', () => {
+            if (currentIndex1 < totalItems1 - 1) {
+                currentIndex1++;
+                updateCarousel1();
+            }
+        });
+
+        // JavaScript for the right carousel (Carousel 2)
+        const carousel2 = document.querySelector('.carousel-container:last-of-type .carousel');
+        const prevBtn2 = document.getElementById('prevBtn2');
+        const nextBtn2 = document.getElementById('nextBtn2');
+        let currentIndex2 = 0;
+        const totalItems2 = document.querySelectorAll('.carousel-container:last-of-type .carousel-item').length;
+
+        // Function to update the right carousel display
+        function updateCarousel2() {
+            carousel2.style.transform = `translateX(-${currentIndex2 * 100}%)`;
+        }
+
+        // Event listener for previous button of right carousel
+        prevBtn2.addEventListener('click', () => {
+            if (currentIndex2 > 0) {
+                currentIndex2--;
+                updateCarousel2();
+            }
+        });
+
+        // Event listener for next button of right carousel
+        nextBtn2.addEventListener('click', () => {
+            if (currentIndex2 < totalItems2 - 1) {
+                currentIndex2++;
+                updateCarousel2();
+            }
+        });
+
+        // JavaScript for playing audio
+        const audioButton = document.getElementById('audioButton');
+        const audio = document.getElementById('audio');
+
+        audioButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                audioButton.textContent = 'Pause Audio';
+            } else {
+                audio.pause();
+                audioButton.textContent = 'Play Audio';
+            }
+        });
     </script>
-    
-    <footer>
-        <p>&copy; 2023 Swarna Ganesan</p>
-         <li><a href="https://linktr.ee/Swarna_Ganesan">Links from creator</a></li>
-    </footer>
-
-    <hr> <!-- Add a horizontal line -->
-
-    <a href="https://www.youtube.com/watch?v=063yxMz20FY&t=48s">Narthamalai</a>
 </body>
 </html>
-
 
 
 
