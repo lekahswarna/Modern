@@ -20,9 +20,6 @@ padding: 10px;
 </header>
 <h2>By Swarna Ganesan(9d)</h2>
 
-
-
-    
         <!-- Right Carousel -->
         <div class="carousel-container">
             <div class="carousel">
@@ -85,20 +82,6 @@ padding: 10px;
             if (currentIndex2 < totalItems2 - 1) {
                 currentIndex2++;
                 updateCarousel2();
-            }
-        });
-
-        // JavaScript for playing audio
-        const audioButton = document.getElementById('audioButton');
-        const audio = document.getElementById('audio');
-
-        audioButton.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                audioButton.textContent = 'Pause Audio';
-            } else {
-                audio.pause();
-                audioButton.textContent = 'Play Audio';
             }
         });
     </script>
