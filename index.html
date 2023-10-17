@@ -21,7 +21,7 @@
     <h2>By Swarna Ganesan(9d)</h2>
    
     
-<!-- Right Carousel -->
+ <!-- Right Carousel -->
         <div class="carousel-container">
             <div class="carousel">
                 <div class="carousel-item">
@@ -31,9 +31,10 @@
                     <h3>Github</h3>
                 </div>
                 <div class="carousel-item">
-                     <div class="box">
-                <p>This is some text in the box.</p>
-            </div>
+                    <a href="https://www.linkedin.com/in/swarna-ganesan/">
+                        <img src="door.png" alt="Image 4">
+                    </a>
+                    <h3>Linkden</h3>
                 </div>
                 <div class="carousel-item">
                     <a href="https://linktr.ee/Swarna_Ganesan">
@@ -52,35 +53,37 @@
             <button class="carousel-button" id="nextBtn2">Next</button>
         </div>
     </div>
+    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/9263d77d-1477-4c45-a65c-af5e662abbba/webchat/config.js" defer></script>
 
-
-    
-    <!-- JavaScript for the left carousel (Carousel 1) -->
     <script>
-        const carousel1 = document.querySelector('.carousel-container .carousel');
-        const prevBtn1 = document.getElementById('prevBtn1');
-        const nextBtn1 = document.getElementById('nextBtn1');
-        let currentIndex1 = 0;
-        const totalItems1 = document.querySelectorAll('.carousel-container .carousel-item').length;
+       
 
-        // Function to update the left carousel display
-        function updateCarousel1() {
-            carousel1.style.transform = `translateX(-${currentIndex1 * 100}%)`;
+        // JavaScript for the right carousel (Carousel 2)
+        const carousel2 = document.querySelector('.carousel-container:last-of-type .carousel');
+        const prevBtn2 = document.getElementById('prevBtn2');
+        const nextBtn2 = document.getElementById('nextBtn2');
+        let currentIndex2 = 0;
+        const totalItems2 = document.querySelectorAll('.carousel-container:last-of-type .carousel-item').length;
+
+        // Function to update the right carousel display
+        function updateCarousel2() {
+            carousel2.style.transform = `translateX(-${currentIndex2 * 100}%)`;
         }
 
-        // Event listener for previous button of left carousel
-        prevBtn1.addEventListener('click', () => {
-            if (currentIndex1 > 0) {
-                currentIndex1--;
-                updateCarousel1();
+        // Event listener for previous button of right carousel
+        prevBtn2.addEventListener('click', () => {
+            if (currentIndex2 > 0) {
+                currentIndex2--;
+                updateCarousel2();
             }
         });
 
-        // Event listener for next button of left carousel
-        nextBtn1.addEventListener('click', () => {
-            if (currentIndex1 < totalItems1 - 1) {
-                currentIndex1++;
-                updateCarousel1();
+        // Event listener for next button of right carousel
+        nextBtn2.addEventListener('click', () => {
+            if (currentIndex2 < totalItems2 - 1) {
+                currentIndex2++;
+                updateCarousel2();
             }
         });
         <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
