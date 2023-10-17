@@ -19,12 +19,9 @@
         <h1>Ponni Selvan-1</h1>
     </header>
     <h2>By Swarna Ganesan(9d)</h2>
-    <!-- Wrap the links in an unordered list <ul> -->
-    <ul>
-        <li><a href="https://linktr.ee/Swarna_Ganesan">Links from creator</a></li>
-    </ul>
-
-    <!-- Add the carousel section below your existing content -->
+    <li><a href="https://linktr.ee/Swarna_Ganesan">Links from creator</a></li>
+    
+    <!-- Carousel Section -->
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-item">
@@ -39,7 +36,7 @@
                 </div>
                 <img src="carousel-image-2.jpg" alt="Image 2">
             </div>
-            <div class "carousel-item">
+            <div class="carousel-item">
                 <div class="box">
                     <p>This is some text in the box.</p>
                 </div>
@@ -49,18 +46,45 @@
         <button class="carousel-button" id="prevBtn">Previous</button>
         <button class="carousel-button" id="nextBtn">Next</button>
     </div>
-
+    
     <footer>
         <p>&copy; 2023 Swarna Ganesan</p>
     </footer>
 
-    <!-- Include the provided JavaScript code -->
-    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/9263d77d-1477-4c45-a65c-af5e662abbba/webchat/config.js" defer></script>
+    <!-- JavaScript for Carousel -->
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+        const totalItems = document.querySelectorAll('.carousel-item').length;
+
+        // Function to update the carousel display
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Event listener for the previous button
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        // Event listener for the next button
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < totalItems - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+    </script>
 
     <hr> <!-- Add a horizontal line -->
 
     <a href="https://www.youtube.com/watch?v=063yxMz20FY&t=48s">Narthamalai</a>
 </body>
 </html>
+
 
