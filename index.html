@@ -21,68 +21,42 @@
     <h2>By Swarna Ganesan(9d)</h2>
     <li><a href="https://linktr.ee/Swarna_Ganesan">Links from creator</a></li>
     
-    <!-- Carousel Section -->
+    <!-- The Carousel Section has been removed -->
     <div class="carousel-container">
-        
-            <div class="carousel-item">
-                <div class="box">
-                    <p>This is some text in the box.</p>
-                </div>
+    <div class="carousel">
+        <div class="carousel-item">
+            <div class="box">
+                <p>This is some text in the box.</p>
             </div>
-            <div class="carousel-item">
-                <div class="box">
-                    <p>This is some text in the box.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="box">
-                    <p>This is some text in the box.</p>
-                </div>
-            
         </div>
-        <button class="carousel-button" id="prevBtn">Previous</button>
-        <button class="carousel-button" id="nextBtn">Next</button>
+        <div class="carousel-item">
+            <div class="box">
+                <p>This is some text in the box.</p>
+            </div>
+        </div>
+        <div class "carousel-item">
+            <div class="box">
+                <p>This is some text in the box.</p>
+            </div>
+        </div>
     </div>
+    <button class="carousel-button" id="prevBtn">Previous</button>
+    <button class="carousel-button" id="nextBtn">Next</button>
+</div>
+
     
     <footer>
         <p>&copy; 2023 Swarna Ganesan</p>
     </footer>
 
-    <!-- JavaScript for Carousel -->
-    <script>
-        const carousel = document.querySelector('.carousel');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentIndex = 0;
-        const totalItems = document.querySelectorAll('.carousel-item').length;
-
-        // Function to update the carousel display
-        function updateCarousel() {
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-
-        // Event listener for the previous button
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
-
-        // Event listener for the next button
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < totalItems - 1) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
-    </script>
-
+    <!-- JavaScript for Carousel has been removed -->
+    
     <hr> <!-- Add a horizontal line -->
 
     <a href="https://www.youtube.com/watch?v=063yxMz20FY&t=48s">Narthamalai</a>
 </body>
 </html>
+
 
 
 
