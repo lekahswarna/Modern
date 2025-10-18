@@ -2,7 +2,7 @@ export function generateTitles(summary, customInstructions = '') {
   const titles = [];
 
   const instructions = `
-Generate 4 distinct titles (maximum 25 words each) for a 1000-word summary.
+Generate 3 distinct titles (maximum 25 words each) for a 1000-word summary.
 Each title MUST include:
 - Company name
 - The action or product
@@ -13,7 +13,7 @@ ${customInstructions ? `Additional requirements: ${customInstructions}` : ''}
 Summary: ${summary}
   `.trim();
 
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i <= 3; i++) {
     const title = extractKeyInfo(summary, i, customInstructions);
     titles.push({
       title_number: i,

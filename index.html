@@ -10,39 +10,56 @@
     <div class="container">
         <header class="header">
             <h1>Summary Title Generator</h1>
-            <p class="subtitle">Generate 4 compelling titles for your 1000-word summaries</p>
+            <p class="subtitle">Upload up to 5 summaries and generate 3 titles for each</p>
         </header>
 
         <div class="input-section">
-            <h2>Add New Summary</h2>
+            <h2>Upload Summaries (up to 5)</h2>
+            <p class="info-text">Add up to 5 summaries below. You'll generate 3 titles for each summary one by one.</p>
 
-            <div class="form-group">
-                <label for="summary-input">Summary Content (1000 words)</label>
-                <textarea
-                    id="summary-input"
-                    placeholder="Paste your 1000-word summary here..."
-                    rows="10"
-                ></textarea>
+            <div id="summaries-input-container">
+                <div class="summary-input-group" data-index="0">
+                    <div class="summary-input-header">
+                        <label>Summary 1</label>
+                        <button type="button" class="remove-btn" onclick="removeSummaryInput(0)" style="display: none;">Remove</button>
+                    </div>
+                    <textarea
+                        class="summary-textarea"
+                        placeholder="Paste your 1000-word summary here..."
+                        rows="6"
+                    ></textarea>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="custom-instructions">Custom Instructions (Optional)</label>
-                <textarea
-                    id="custom-instructions"
-                    placeholder="e.g., Exclude executive names, Focus on revenue metrics, Avoid technical jargon..."
-                    rows="3"
-                ></textarea>
-                <small class="help-text">Specify any requirements for title generation, such as excluding executive names or focusing on specific aspects.</small>
-            </div>
+            <button id="add-summary-btn" class="secondary-btn" onclick="addSummaryInput()">
+                + Add Another Summary (max 5)
+            </button>
 
-            <button id="submit-btn" class="primary-btn" onclick="saveSummary()">
-                Save Summary
+            <button id="submit-btn" class="primary-btn" onclick="uploadSummaries()">
+                Upload Summaries
             </button>
         </div>
 
-        <div class="summaries-section">
-            <h2>Saved Summaries</h2>
+        <div class="summaries-section" id="summaries-section" style="display: none;">
+            <h2>Generate Titles</h2>
+            <p class="info-text">Generate 3 titles for each summary one by one. Click the button to generate titles.</p>
             <div id="summaries-list"></div>
+
+            <div id="instructions-section" style="display: none; margin-top: 30px; padding-top: 30px; border-top: 2px solid #ecf0f1;">
+                <h3>Custom Instructions</h3>
+                <p class="info-text">Before generating all titles, provide any custom instructions (optional).</p>
+                <div class="form-group">
+                    <textarea
+                        id="custom-instructions"
+                        placeholder="e.g., Exclude executive names, Focus on revenue metrics, Avoid technical jargon..."
+                        rows="3"
+                    ></textarea>
+                    <small class="help-text">These instructions will apply to all remaining title generations.</small>
+                </div>
+                <button class="primary-btn" onclick="applyInstructionsAndContinue()">
+                    Apply Instructions & Continue
+                </button>
+            </div>
         </div>
     </div>
 
