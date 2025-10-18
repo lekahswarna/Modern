@@ -3,81 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Modern General</title>
-    <style>
-        body {
-            font-family: 'Times New Roman', serif;
-            background-color: #f5e6ca;
-            color: #3e2723;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        .header {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .content-box {
-            display: flex;
-            flex-direction: row;
-            background: #fff8e1;
-            padding: 20px;
-            border: 2px solid #3e2723;
-        }
-        .image-section, .blog-section {
-            width: 50%;
-            padding: 10px;
-        }
-        img {
-            width: 100%;
-            border: 1px solid #3e2723;
-        }
-        .contact {
-            margin-top: 20px;
-        }
-        .contact input, .contact textarea {
-            width: 80%;
-            padding: 10px;
-            margin: 5px;
-            border: 1px solid #3e2723;
-        }
-        .social-links a {
-            margin: 10px;
-            text-decoration: none;
-            color: #3e2723;
-        }
-    </style>
+    <title>Summary Title Generator</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">The Modern General</div>
-        <div class="content-box">
-            <div class="image-section">
-                <img src="image-placeholder.jpg" alt="Historical Attire">
+        <header class="header">
+            <h1>Summary Title Generator</h1>
+            <p class="subtitle">Generate 4 compelling titles for your 1000-word summaries</p>
+        </header>
+
+        <div class="input-section">
+            <h2>Add New Summary</h2>
+
+            <div class="form-group">
+                <label for="summary-input">Summary Content (1000 words)</label>
+                <textarea
+                    id="summary-input"
+                    placeholder="Paste your 1000-word summary here..."
+                    rows="10"
+                ></textarea>
             </div>
-            <div class="blog-section">
-                <p>Welcome to The Modern General! Explore the history behind war and political attire.</p>
+
+            <div class="form-group">
+                <label for="custom-instructions">Custom Instructions (Optional)</label>
+                <textarea
+                    id="custom-instructions"
+                    placeholder="e.g., Exclude executive names, Focus on revenue metrics, Avoid technical jargon..."
+                    rows="3"
+                ></textarea>
+                <small class="help-text">Specify any requirements for title generation, such as excluding executive names or focusing on specific aspects.</small>
             </div>
+
+            <button id="submit-btn" class="primary-btn" onclick="saveSummary()">
+                Save Summary
+            </button>
         </div>
-        <div class="contact">
-            <h2>Contact Me</h2>
-            <input type="text" placeholder="Your Name"><br>
-            <input type="email" placeholder="Your Email"><br>
-            <textarea placeholder="Your Message"></textarea><br>
-            <button>Send</button>
-        </div>
-        <div class="social-links">
-            <h2>Follow Me</h2>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-            <a href="#">Facebook</a>
+
+        <div class="summaries-section">
+            <h2>Saved Summaries</h2>
+            <div id="summaries-list"></div>
         </div>
     </div>
+
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>
